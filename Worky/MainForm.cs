@@ -10,11 +10,21 @@ using System.Windows.Forms;
 
 namespace Worky
 {
-    public partial class Form1 : Form
+    public partial class MainForm : Form
     {
-        public Form1()
+        public MainForm()
         {
             InitializeComponent();
+        }
+
+        private void CheckBoxWorkingCheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void CheckBoxPausingCheckedChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
