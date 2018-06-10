@@ -30,6 +30,11 @@
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPageState = new System.Windows.Forms.TabPage();
+            this.textBoxPausingTimeToday = new System.Windows.Forms.TextBox();
+            this.labelPauseTimeToday = new System.Windows.Forms.Label();
+            this.textBoxWorkTimeMonth = new System.Windows.Forms.TextBox();
+            this.textBoxWorkTimeWeek = new System.Windows.Forms.TextBox();
+            this.textBoxWorkTimeToday = new System.Windows.Forms.TextBox();
             this.labelWorkTimeToday = new System.Windows.Forms.Label();
             this.labelWorkTimeMonth = new System.Windows.Forms.Label();
             this.labelWorkTimeWeek = new System.Windows.Forms.Label();
@@ -37,11 +42,6 @@
             this.checkBoxPausing = new System.Windows.Forms.CheckBox();
             this.checkBoxWorking = new System.Windows.Forms.CheckBox();
             this.tabPageData = new System.Windows.Forms.TabPage();
-            this.textBoxWorkTimeToday = new System.Windows.Forms.TextBox();
-            this.textBoxWorkTimeWeek = new System.Windows.Forms.TextBox();
-            this.textBoxWorkTimeMonth = new System.Windows.Forms.TextBox();
-            this.labelPauseTimeToday = new System.Windows.Forms.Label();
-            this.textBoxPausingTimeToday = new System.Windows.Forms.TextBox();
             this.tabControl1.SuspendLayout();
             this.tabPageState.SuspendLayout();
             this.tableLayoutButtonsPanel.SuspendLayout();
@@ -76,6 +76,61 @@
             this.tabPageState.TabIndex = 0;
             this.tabPageState.Text = "Status";
             this.tabPageState.UseVisualStyleBackColor = true;
+            // 
+            // textBoxPausingTimeToday
+            // 
+            this.textBoxPausingTimeToday.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBoxPausingTimeToday.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBoxPausingTimeToday.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxPausingTimeToday.Location = new System.Drawing.Point(469, 64);
+            this.textBoxPausingTimeToday.Name = "textBoxPausingTimeToday";
+            this.textBoxPausingTimeToday.ReadOnly = true;
+            this.textBoxPausingTimeToday.Size = new System.Drawing.Size(130, 26);
+            this.textBoxPausingTimeToday.TabIndex = 12;
+            // 
+            // labelPauseTimeToday
+            // 
+            this.labelPauseTimeToday.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelPauseTimeToday.AutoSize = true;
+            this.labelPauseTimeToday.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelPauseTimeToday.Location = new System.Drawing.Point(257, 66);
+            this.labelPauseTimeToday.Name = "labelPauseTimeToday";
+            this.labelPauseTimeToday.Size = new System.Drawing.Size(137, 20);
+            this.labelPauseTimeToday.TabIndex = 11;
+            this.labelPauseTimeToday.Text = "Pausenzeit heute:";
+            // 
+            // textBoxWorkTimeMonth
+            // 
+            this.textBoxWorkTimeMonth.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBoxWorkTimeMonth.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBoxWorkTimeMonth.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxWorkTimeMonth.Location = new System.Drawing.Point(469, 227);
+            this.textBoxWorkTimeMonth.Name = "textBoxWorkTimeMonth";
+            this.textBoxWorkTimeMonth.ReadOnly = true;
+            this.textBoxWorkTimeMonth.Size = new System.Drawing.Size(130, 26);
+            this.textBoxWorkTimeMonth.TabIndex = 10;
+            // 
+            // textBoxWorkTimeWeek
+            // 
+            this.textBoxWorkTimeWeek.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBoxWorkTimeWeek.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBoxWorkTimeWeek.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxWorkTimeWeek.Location = new System.Drawing.Point(469, 192);
+            this.textBoxWorkTimeWeek.Name = "textBoxWorkTimeWeek";
+            this.textBoxWorkTimeWeek.ReadOnly = true;
+            this.textBoxWorkTimeWeek.Size = new System.Drawing.Size(130, 26);
+            this.textBoxWorkTimeWeek.TabIndex = 9;
+            // 
+            // textBoxWorkTimeToday
+            // 
+            this.textBoxWorkTimeToday.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBoxWorkTimeToday.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBoxWorkTimeToday.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxWorkTimeToday.Location = new System.Drawing.Point(469, 32);
+            this.textBoxWorkTimeToday.Name = "textBoxWorkTimeToday";
+            this.textBoxWorkTimeToday.ReadOnly = true;
+            this.textBoxWorkTimeToday.Size = new System.Drawing.Size(130, 26);
+            this.textBoxWorkTimeToday.TabIndex = 8;
             // 
             // labelWorkTimeToday
             // 
@@ -162,65 +217,10 @@
             this.tabPageData.Location = new System.Drawing.Point(4, 22);
             this.tabPageData.Name = "tabPageData";
             this.tabPageData.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageData.Size = new System.Drawing.Size(907, 410);
+            this.tabPageData.Size = new System.Drawing.Size(607, 286);
             this.tabPageData.TabIndex = 1;
             this.tabPageData.Text = "Daten";
             this.tabPageData.UseVisualStyleBackColor = true;
-            // 
-            // textBoxWorkTimeToday
-            // 
-            this.textBoxWorkTimeToday.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBoxWorkTimeToday.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBoxWorkTimeToday.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxWorkTimeToday.Location = new System.Drawing.Point(469, 32);
-            this.textBoxWorkTimeToday.Name = "textBoxWorkTimeToday";
-            this.textBoxWorkTimeToday.ReadOnly = true;
-            this.textBoxWorkTimeToday.Size = new System.Drawing.Size(130, 26);
-            this.textBoxWorkTimeToday.TabIndex = 8;
-            // 
-            // textBoxWorkTimeWeek
-            // 
-            this.textBoxWorkTimeWeek.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBoxWorkTimeWeek.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBoxWorkTimeWeek.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxWorkTimeWeek.Location = new System.Drawing.Point(469, 192);
-            this.textBoxWorkTimeWeek.Name = "textBoxWorkTimeWeek";
-            this.textBoxWorkTimeWeek.ReadOnly = true;
-            this.textBoxWorkTimeWeek.Size = new System.Drawing.Size(130, 26);
-            this.textBoxWorkTimeWeek.TabIndex = 9;
-            // 
-            // textBoxWorkTimeMonth
-            // 
-            this.textBoxWorkTimeMonth.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBoxWorkTimeMonth.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBoxWorkTimeMonth.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxWorkTimeMonth.Location = new System.Drawing.Point(469, 227);
-            this.textBoxWorkTimeMonth.Name = "textBoxWorkTimeMonth";
-            this.textBoxWorkTimeMonth.ReadOnly = true;
-            this.textBoxWorkTimeMonth.Size = new System.Drawing.Size(130, 26);
-            this.textBoxWorkTimeMonth.TabIndex = 10;
-            // 
-            // labelPauseTimeToday
-            // 
-            this.labelPauseTimeToday.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelPauseTimeToday.AutoSize = true;
-            this.labelPauseTimeToday.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelPauseTimeToday.Location = new System.Drawing.Point(257, 66);
-            this.labelPauseTimeToday.Name = "labelPauseTimeToday";
-            this.labelPauseTimeToday.Size = new System.Drawing.Size(137, 20);
-            this.labelPauseTimeToday.TabIndex = 11;
-            this.labelPauseTimeToday.Text = "Pausenzeit heute:";
-            // 
-            // textBoxPausingTimeToday
-            // 
-            this.textBoxPausingTimeToday.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBoxPausingTimeToday.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBoxPausingTimeToday.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxPausingTimeToday.Location = new System.Drawing.Point(469, 64);
-            this.textBoxPausingTimeToday.Name = "textBoxPausingTimeToday";
-            this.textBoxPausingTimeToday.ReadOnly = true;
-            this.textBoxPausingTimeToday.Size = new System.Drawing.Size(130, 26);
-            this.textBoxPausingTimeToday.TabIndex = 12;
             // 
             // MainForm
             // 
@@ -230,6 +230,8 @@
             this.Controls.Add(this.tabControl1);
             this.Name = "MainForm";
             this.Text = "Worky";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.MainForm_FormClosed);
+            this.Load += new System.EventHandler(this.MainForm_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabPageState.ResumeLayout(false);
             this.tabPageState.PerformLayout();

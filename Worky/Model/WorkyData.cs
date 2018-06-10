@@ -9,19 +9,29 @@ namespace Worky.Model
 {
     class WorkyData : IActivity
     {
-        public void EndWorking()
+        public WorkyData()
         {
-            //throw new NotImplementedException();
+            //TODO:
+            // read data from file
         }
 
         public void StartPausing()
         {
-            //throw new NotImplementedException();
+            //TODO:
+            // add start-pausing-time in time-table
         }
 
         public void StartWorking()
         {
-            //throw new NotImplementedException();
+            //TODO:
+            // add start-working-time in time-table
+        }
+
+        public void EndWorking()
+        {
+            //TODO:
+            // add end-time in time-table
+            // write data into file
         }
     }
 }

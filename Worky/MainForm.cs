@@ -13,21 +13,43 @@ namespace Worky
 {
     public partial class MainForm : Form
     {
-        public IActivity Activity { get; set; }
+        public IActivity Activity { get; private set; }
 
-        public MainForm()
+        public MainForm(IActivity activity)
         {
             InitializeComponent();
+            Activity = activity;
         }
 
         private void CheckBoxWorkingCheckedChanged(object sender, EventArgs e)
         {
+            CheckBox cb = (CheckBox)sender;
+            if (!cb.Checked)
+                return;
+
+            checkBoxPausing.Checked = false;
             Activity.StartWorking();
         }
 
         private void CheckBoxPausingCheckedChanged(object sender, EventArgs e)
         {
+            CheckBox cb = (CheckBox)sender;
+            if (!cb.Checked)
+                return;
+
+            checkBoxWorking.Checked = false;
             Activity.StartPausing();
+        }
+
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+            checkBoxWorking.Checked = true;
+            checkBoxPausing.Checked = false;
+        }
+
+        private void MainForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Activity.EndWorking();
         }
     }
 }

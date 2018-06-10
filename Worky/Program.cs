@@ -19,8 +19,7 @@ namespace Worky
             Application.SetCompatibleTextRenderingDefault(false);
 
             WorkyData data = new WorkyData();
-            MainForm mainForm = new MainForm();
-            mainForm.Activity = data;
+            MainForm mainForm = new MainForm(data);
             Application.Run(mainForm);
         }
     }
