@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Worky.Model;
 
 namespace Worky
 {
@@ -16,7 +17,11 @@ namespace Worky
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MainForm());
+
+            WorkyData data = new WorkyData();
+            MainForm mainForm = new MainForm();
+            mainForm.Activity = data;
+            Application.Run(mainForm);
         }
     }
 }
