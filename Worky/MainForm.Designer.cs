@@ -39,9 +39,9 @@
             this.labelWorkTimeMonth = new System.Windows.Forms.Label();
             this.labelWorkTimeWeek = new System.Windows.Forms.Label();
             this.tableLayoutButtonsPanel = new System.Windows.Forms.TableLayoutPanel();
-            this.checkBoxPausing = new System.Windows.Forms.CheckBox();
-            this.checkBoxWorking = new System.Windows.Forms.CheckBox();
             this.tabPageData = new System.Windows.Forms.TabPage();
+            this.radioButtonWorking = new System.Windows.Forms.RadioButton();
+            this.radioButtonPausing = new System.Windows.Forms.RadioButton();
             this.tabControl1.SuspendLayout();
             this.tabPageState.SuspendLayout();
             this.tableLayoutButtonsPanel.SuspendLayout();
@@ -55,7 +55,7 @@
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(615, 312);
+            this.tabControl1.Size = new System.Drawing.Size(615, 558);
             this.tabControl1.TabIndex = 0;
             // 
             // tabPageState
@@ -72,7 +72,7 @@
             this.tabPageState.Location = new System.Drawing.Point(4, 22);
             this.tabPageState.Name = "tabPageState";
             this.tabPageState.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageState.Size = new System.Drawing.Size(607, 286);
+            this.tabPageState.Size = new System.Drawing.Size(607, 532);
             this.tabPageState.TabIndex = 0;
             this.tabPageState.Text = "Status";
             this.tabPageState.UseVisualStyleBackColor = true;
@@ -172,45 +172,15 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tableLayoutButtonsPanel.ColumnCount = 1;
             this.tableLayoutButtonsPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutButtonsPanel.Controls.Add(this.checkBoxPausing, 0, 1);
-            this.tableLayoutButtonsPanel.Controls.Add(this.checkBoxWorking, 0, 0);
+            this.tableLayoutButtonsPanel.Controls.Add(this.radioButtonPausing, 0, 1);
+            this.tableLayoutButtonsPanel.Controls.Add(this.radioButtonWorking, 0, 0);
             this.tableLayoutButtonsPanel.Location = new System.Drawing.Point(13, 29);
             this.tableLayoutButtonsPanel.Name = "tableLayoutButtonsPanel";
             this.tableLayoutButtonsPanel.RowCount = 2;
             this.tableLayoutButtonsPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutButtonsPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutButtonsPanel.Size = new System.Drawing.Size(234, 219);
+            this.tableLayoutButtonsPanel.Size = new System.Drawing.Size(234, 465);
             this.tableLayoutButtonsPanel.TabIndex = 4;
-            // 
-            // checkBoxPausing
-            // 
-            this.checkBoxPausing.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.checkBoxPausing.Appearance = System.Windows.Forms.Appearance.Button;
-            this.checkBoxPausing.Location = new System.Drawing.Point(3, 112);
-            this.checkBoxPausing.Name = "checkBoxPausing";
-            this.checkBoxPausing.Size = new System.Drawing.Size(228, 104);
-            this.checkBoxPausing.TabIndex = 3;
-            this.checkBoxPausing.Text = "Ich mache Pause";
-            this.checkBoxPausing.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.checkBoxPausing.UseVisualStyleBackColor = true;
-            this.checkBoxPausing.CheckedChanged += new System.EventHandler(this.CheckBoxPausingCheckedChanged);
-            // 
-            // checkBoxWorking
-            // 
-            this.checkBoxWorking.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.checkBoxWorking.Appearance = System.Windows.Forms.Appearance.Button;
-            this.checkBoxWorking.Location = new System.Drawing.Point(3, 3);
-            this.checkBoxWorking.Name = "checkBoxWorking";
-            this.checkBoxWorking.Size = new System.Drawing.Size(228, 103);
-            this.checkBoxWorking.TabIndex = 2;
-            this.checkBoxWorking.Text = "Ich arbeite";
-            this.checkBoxWorking.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.checkBoxWorking.UseVisualStyleBackColor = true;
-            this.checkBoxWorking.CheckedChanged += new System.EventHandler(this.CheckBoxWorkingCheckedChanged);
             // 
             // tabPageData
             // 
@@ -222,11 +192,41 @@
             this.tabPageData.Text = "Daten";
             this.tabPageData.UseVisualStyleBackColor = true;
             // 
+            // radioButtonWorking
+            // 
+            this.radioButtonWorking.Appearance = System.Windows.Forms.Appearance.Button;
+            this.radioButtonWorking.AutoSize = true;
+            this.radioButtonWorking.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.radioButtonWorking.Location = new System.Drawing.Point(3, 3);
+            this.radioButtonWorking.Name = "radioButtonWorking";
+            this.radioButtonWorking.Size = new System.Drawing.Size(228, 226);
+            this.radioButtonWorking.TabIndex = 13;
+            this.radioButtonWorking.TabStop = true;
+            this.radioButtonWorking.Text = "Ich arbeite";
+            this.radioButtonWorking.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.radioButtonWorking.UseVisualStyleBackColor = true;
+            //this.radioButtonWorking.CheckedChanged += new System.EventHandler(this.RadioButtonWorkingCheckedChanged);
+            // 
+            // radioButtonPausing
+            // 
+            this.radioButtonPausing.Appearance = System.Windows.Forms.Appearance.Button;
+            this.radioButtonPausing.AutoSize = true;
+            this.radioButtonPausing.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.radioButtonPausing.Location = new System.Drawing.Point(3, 235);
+            this.radioButtonPausing.Name = "radioButtonPausing";
+            this.radioButtonPausing.Size = new System.Drawing.Size(228, 227);
+            this.radioButtonPausing.TabIndex = 14;
+            this.radioButtonPausing.TabStop = true;
+            this.radioButtonPausing.Text = "Ich mache Pause";
+            this.radioButtonPausing.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.radioButtonPausing.UseVisualStyleBackColor = true;
+            //this.radioButtonPausing.CheckedChanged += new System.EventHandler(this.RadioButtonPausingCheckedChanged);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(615, 312);
+            this.ClientSize = new System.Drawing.Size(615, 558);
             this.Controls.Add(this.tabControl1);
             this.Name = "MainForm";
             this.Text = "Worky";
@@ -236,6 +236,7 @@
             this.tabPageState.ResumeLayout(false);
             this.tabPageState.PerformLayout();
             this.tableLayoutButtonsPanel.ResumeLayout(false);
+            this.tableLayoutButtonsPanel.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -245,8 +246,6 @@
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPageState;
         private System.Windows.Forms.TabPage tabPageData;
-        private System.Windows.Forms.CheckBox checkBoxPausing;
-        private System.Windows.Forms.CheckBox checkBoxWorking;
         private System.Windows.Forms.TableLayoutPanel tableLayoutButtonsPanel;
         private System.Windows.Forms.Label labelWorkTimeToday;
         private System.Windows.Forms.Label labelWorkTimeMonth;
@@ -256,6 +255,8 @@
         private System.Windows.Forms.TextBox textBoxWorkTimeMonth;
         private System.Windows.Forms.TextBox textBoxWorkTimeWeek;
         private System.Windows.Forms.TextBox textBoxWorkTimeToday;
+        private System.Windows.Forms.RadioButton radioButtonPausing;
+        private System.Windows.Forms.RadioButton radioButtonWorking;
     }
 }
 

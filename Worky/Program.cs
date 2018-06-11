@@ -18,7 +18,7 @@ namespace Worky
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            WorkyData data = new WorkyData();
+            WorkingData data = new WorkingData();
             MainForm mainForm = new MainForm(data);
             Application.Run(mainForm);
         }

@@ -52,7 +52,10 @@
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Model\WorkyData.cs" />
+    <Compile Include="Model\MainViewModel.cs" />
+    <Compile Include="Model\TimeStamp.cs" />
+    <Compile Include="Model\WorkingState.cs" />
+    <Compile Include="Model\WorkingData.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="MainForm.resx">
