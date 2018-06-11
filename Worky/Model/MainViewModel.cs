@@ -35,11 +35,6 @@ namespace Worky.Model
             get { return _workingData.State == WorkingState.Working; }
             set
             {
-                //if (value == true && _workingData.IsWorking)
-                //    return;
-                //if (value == false && !_workingData.IsWorking)
-                //    return;
-
                 _workingData.State = (value) ? WorkingState.Working : WorkingState.Pausing;
                 OnPropertyChanged("IsWorking");
             }
@@ -49,11 +44,6 @@ namespace Worky.Model
             get { return _workingData.IsPausing; }
             set
             {
-                //if (value == true && _workingData.IsPausing)
-                //    return;
-                //if (value == false && !_workingData.IsPausing)
-                //    return;
-
                 _workingData.State = (value) ? WorkingState.Pausing : WorkingState.Working;
                 OnPropertyChanged("IsPausing");
             }
@@ -61,9 +51,6 @@ namespace Worky.Model
 
         public MainViewModel()
         {
-            //#####################################
-            //PauseTimeToday = "foobar";
-            //#####################################
             _workingData.StartWorking();
         }
 
@@ -71,16 +58,6 @@ namespace Worky.Model
         {
             _workingData.EndWorking();
         }
-
-        //private void WorkingStateChanged()
-        //{
-        //    if (IsWorking)
-        //        _workingData.StartWorking();
-        //    else if (IsPausing)
-        //        _workingData.StartPausing();
-        //    else
-        //        _workingData.EndWorking();
-        //}
 
         protected void OnPropertyChanged(string propertyName)
         {
