@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPageState = new System.Windows.Forms.TabPage();
             this.textBoxPausingTimeToday = new System.Windows.Forms.TextBox();
@@ -39,9 +40,10 @@
             this.labelWorkTimeMonth = new System.Windows.Forms.Label();
             this.labelWorkTimeWeek = new System.Windows.Forms.Label();
             this.tableLayoutButtonsPanel = new System.Windows.Forms.TableLayoutPanel();
-            this.tabPageData = new System.Windows.Forms.TabPage();
-            this.radioButtonWorking = new System.Windows.Forms.RadioButton();
             this.radioButtonPausing = new System.Windows.Forms.RadioButton();
+            this.radioButtonWorking = new System.Windows.Forms.RadioButton();
+            this.tabPageData = new System.Windows.Forms.TabPage();
+            this.timer = new System.Windows.Forms.Timer(this.components);
             this.tabControl1.SuspendLayout();
             this.tabPageState.SuspendLayout();
             this.tableLayoutButtonsPanel.SuspendLayout();
@@ -182,15 +184,19 @@
             this.tableLayoutButtonsPanel.Size = new System.Drawing.Size(234, 465);
             this.tableLayoutButtonsPanel.TabIndex = 4;
             // 
-            // tabPageData
+            // radioButtonPausing
             // 
-            this.tabPageData.Location = new System.Drawing.Point(4, 22);
-            this.tabPageData.Name = "tabPageData";
-            this.tabPageData.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageData.Size = new System.Drawing.Size(607, 286);
-            this.tabPageData.TabIndex = 1;
-            this.tabPageData.Text = "Daten";
-            this.tabPageData.UseVisualStyleBackColor = true;
+            this.radioButtonPausing.Appearance = System.Windows.Forms.Appearance.Button;
+            this.radioButtonPausing.AutoSize = true;
+            this.radioButtonPausing.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.radioButtonPausing.Location = new System.Drawing.Point(3, 235);
+            this.radioButtonPausing.Name = "radioButtonPausing";
+            this.radioButtonPausing.Size = new System.Drawing.Size(228, 227);
+            this.radioButtonPausing.TabIndex = 14;
+            this.radioButtonPausing.TabStop = true;
+            this.radioButtonPausing.Text = "Ich mache Pause";
+            this.radioButtonPausing.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.radioButtonPausing.UseVisualStyleBackColor = true;
             // 
             // radioButtonWorking
             // 
@@ -205,22 +211,21 @@
             this.radioButtonWorking.Text = "Ich arbeite";
             this.radioButtonWorking.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.radioButtonWorking.UseVisualStyleBackColor = true;
-            //this.radioButtonWorking.CheckedChanged += new System.EventHandler(this.RadioButtonWorkingCheckedChanged);
             // 
-            // radioButtonPausing
+            // tabPageData
             // 
-            this.radioButtonPausing.Appearance = System.Windows.Forms.Appearance.Button;
-            this.radioButtonPausing.AutoSize = true;
-            this.radioButtonPausing.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.radioButtonPausing.Location = new System.Drawing.Point(3, 235);
-            this.radioButtonPausing.Name = "radioButtonPausing";
-            this.radioButtonPausing.Size = new System.Drawing.Size(228, 227);
-            this.radioButtonPausing.TabIndex = 14;
-            this.radioButtonPausing.TabStop = true;
-            this.radioButtonPausing.Text = "Ich mache Pause";
-            this.radioButtonPausing.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.radioButtonPausing.UseVisualStyleBackColor = true;
-            //this.radioButtonPausing.CheckedChanged += new System.EventHandler(this.RadioButtonPausingCheckedChanged);
+            this.tabPageData.Location = new System.Drawing.Point(4, 22);
+            this.tabPageData.Name = "tabPageData";
+            this.tabPageData.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPageData.Size = new System.Drawing.Size(607, 532);
+            this.tabPageData.TabIndex = 1;
+            this.tabPageData.Text = "Daten";
+            this.tabPageData.UseVisualStyleBackColor = true;
+            // 
+            // timer
+            // 
+            this.timer.Interval = 500;
+            this.timer.Tick += new System.EventHandler(this.Timer_Ticked);
             // 
             // MainForm
             // 
@@ -257,6 +262,7 @@
         private System.Windows.Forms.TextBox textBoxWorkTimeToday;
         private System.Windows.Forms.RadioButton radioButtonPausing;
         private System.Windows.Forms.RadioButton radioButtonWorking;
+        private System.Windows.Forms.Timer timer;
     }
 }
 

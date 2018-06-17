@@ -9,10 +9,14 @@ namespace Worky.Model
 {
     public class MainViewModel : INotifyPropertyChanged
     {
+        private readonly string TIME_FORMAT = @"hh\:mm\:ss";
+
         public event PropertyChangedEventHandler PropertyChanged;
 
-        //private WorkingState _state = WorkingState.Working;
         private WorkingData _workingData = new WorkingData();
+
+        private string _workingTimeToday = string.Empty;
+        private string _pausingTimeToday = string.Empty;
 
         public string Caption
         {
@@ -20,13 +24,22 @@ namespace Worky.Model
         }
         public string WorkingTimeToday
         {
-            get
+            get { return _workingTimeToday; }
+            set
             {
-                //_workingData.TimeStampsOfToday
-                return "working today";
+                _workingTimeToday = value;
+                OnPropertyChanged("WorkingTimeToday");
             }
         }
-        public string PauseTimeToday { get; set; }// = "pausing today";
+        public string PauseTimeToday
+        {
+            get { return _pausingTimeToday; }
+            set
+            {
+                _pausingTimeToday = value;
+                OnPropertyChanged("PausingTimeToday");
+            }
+        }
         public string WorkingTimeThisWeek { get; set; }// = "working this week";
         public string WorkingTimeThisMonth { get; set; }// = "working this month";
 
@@ -58,6 +71,11 @@ namespace Worky.Model
         {
             _workingData.EndWorking();
         }
+        public void UpdateTimes()
+        {
+            WorkingTimeToday = _workingData.WorkingTimeToday.ToString(TIME_FORMAT);
+            PauseTimeToday = _workingData.PauseTimeToday.ToString(TIME_FORMAT);
+        }
 
         protected void OnPropertyChanged(string propertyName)
         {
@@ -65,3 +83,4 @@ namespace Worky.Model
         }
     }
 }
+

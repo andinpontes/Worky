@@ -34,12 +34,19 @@ namespace Worky.Model
         public TimeStamp[] TimeStampsOfToday { get { return _timeStamps.Where(e => e.DateTime > DateTime.Today).ToArray(); } }
         //List<TimeStamp> TimeStampsOfThisWeek { ... }
         //List<TimeStamp> TimeStampsOfThisMonth { ... }
-        //TimeSpan WorkTimeToday { ... }
-        //TimeSpan PauseTimeToday { ... }
         //TimeSpan WorkTimeThisWeek { ... }
         //TimeSpan WorkTimeThisMonth { ... }
         public bool IsWorking { get { return State == WorkingState.Working; } }
         public bool IsPausing { get { return State == WorkingState.Pausing; } }
+
+        public TimeSpan WorkingTimeToday
+        {
+            get { return CalculateTimeSpan(WorkingState.Working); }
+        }
+        public TimeSpan PauseTimeToday
+        {
+            get { return CalculateTimeSpan(WorkingState.Pausing); }
+        }
 
         public WorkingData()
         {
@@ -69,6 +76,36 @@ namespace Worky.Model
             _timeStamps.Add(new TimeStamp(WorkingState.Ending));
             //TODO:
             // write data into file
+        }
+
+        private TimeSpan CalculateTimeSpan(WorkingState workingState)
+        {
+            TimeSpan result = new TimeSpan();
+
+            TimeStamp[] todaysStamps = TimeStampsOfToday;
+
+            for (int index = 0; index < todaysStamps.Length; index++)
+            {
+                TimeStamp current = todaysStamps[index];
+                if (current.WorkingState != workingState)
+                    continue;
+
+                DateTime endTime = GetIntervalEndTimeByIndex(index);
+                TimeSpan span = endTime - current.DateTime;
+                result = result.Add(span);
+            }
+
+            return result;
+        }
+        private DateTime GetIntervalEndTimeByIndex(int index)
+        {
+            DateTime result = DateTime.Now;
+
+            TimeStamp[] todaysStamps = TimeStampsOfToday;
+            if (index < todaysStamps.Length - 1)
+                result = todaysStamps[index + 1].DateTime;
+
+            return result;
         }
     }
 }

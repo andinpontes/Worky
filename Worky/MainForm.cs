@@ -66,6 +66,7 @@ namespace Worky
 
         private void MainForm_Load(object sender, EventArgs e)
         {
+            timer.Start();
             //checkBoxWorking.Checked = true;
             //checkBoxPausing.Checked = false;
         }
@@ -74,6 +75,12 @@ namespace Worky
         {
             //Activity.EndWorking();
             ViewModel.Close();
+        }
+
+        private void Timer_Ticked(object sender, EventArgs e)
+        {
+            ViewModel.UpdateTimes();
+            //textBoxWorkTimeToday.Invalidate();
         }
 
         //private void RadioButtonWorkingCheckedChanged(object sender, EventArgs e)
