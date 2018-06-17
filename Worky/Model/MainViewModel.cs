@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -17,6 +18,7 @@ namespace Worky.Model
 
         private string _workingTimeToday = string.Empty;
         private string _pausingTimeToday = string.Empty;
+        private string _workingTimeThisWeek = string.Empty;
 
         public string Caption
         {
@@ -40,7 +42,21 @@ namespace Worky.Model
                 OnPropertyChanged("PausingTimeToday");
             }
         }
-        public string WorkingTimeThisWeek { get; set; }// = "working this week";
+        public string WorkingTimeThisWeek
+        {
+            get { return _workingTimeThisWeek; }
+            set
+            {
+                _workingTimeThisWeek = value;
+
+                //StackFrame frame = new StackFrame(0);
+                //var method = frame.GetMethod();
+                //var type = method.DeclaringType;
+                //var name = method.Name;
+
+                OnPropertyChanged("WorkingTimeThisWeek");
+            }
+        }
         public string WorkingTimeThisMonth { get; set; }// = "working this month";
 
         public bool IsWorking
@@ -75,6 +91,8 @@ namespace Worky.Model
         {
             WorkingTimeToday = _workingData.WorkingTimeToday.ToString(TIME_FORMAT);
             PauseTimeToday = _workingData.PauseTimeToday.ToString(TIME_FORMAT);
+            WorkingTimeThisWeek = _workingData.WorkTimeThisWeek.ToString(TIME_FORMAT);
+            WorkingTimeThisMonth = _workingData.WorkTimeThisMonth.ToString(TIME_FORMAT);
         }
 
         protected void OnPropertyChanged(string propertyName)
