@@ -5,6 +5,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Worky.Extensions;
 
 namespace Worky.Model
 {
@@ -30,7 +31,7 @@ namespace Worky.Model
             set
             {
                 _workingTimeToday = value;
-                OnPropertyChanged("WorkingTimeToday");
+                OnPropertyChanged(PropertyHelper.CallerName());
             }
         }
         public string PauseTimeToday
@@ -39,7 +40,7 @@ namespace Worky.Model
             set
             {
                 _pausingTimeToday = value;
-                OnPropertyChanged("PausingTimeToday");
+                OnPropertyChanged(PropertyHelper.CallerName());
             }
         }
         public string WorkingTimeThisWeek
@@ -49,12 +50,7 @@ namespace Worky.Model
             {
                 _workingTimeThisWeek = value;
 
-                //StackFrame frame = new StackFrame(0);
-                //var method = frame.GetMethod();
-                //var type = method.DeclaringType;
-                //var name = method.Name;
-
-                OnPropertyChanged("WorkingTimeThisWeek");
+                OnPropertyChanged(PropertyHelper.CallerName());
             }
         }
         public string WorkingTimeThisMonth { get; set; }// = "working this month";
@@ -65,7 +61,7 @@ namespace Worky.Model
             set
             {
                 _workingData.State = (value) ? WorkingState.Working : WorkingState.Pausing;
-                OnPropertyChanged("IsWorking");
+                OnPropertyChanged(PropertyHelper.CallerName());
             }
         }
         public bool IsPausing
@@ -74,7 +70,7 @@ namespace Worky.Model
             set
             {
                 _workingData.State = (value) ? WorkingState.Pausing : WorkingState.Working;
-                OnPropertyChanged("IsPausing");
+                OnPropertyChanged(PropertyHelper.CallerName());
             }
         }
 

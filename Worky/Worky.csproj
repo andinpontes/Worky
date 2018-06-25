@@ -46,6 +46,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Extensions\DateTimeExtensions.cs" />
+    <Compile Include="Extensions\PropertyHelper.cs" />
     <Compile Include="Interfaces\IActivity.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
