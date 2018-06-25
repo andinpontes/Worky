@@ -1,14 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Worky.Interfaces;
 using Worky.Extensions;
 
 namespace Worky.Model
 {
-    class WorkingData : IActivity
+    class WorkingData
     {
         private List<TimeStamp> _timeStamps = new List<TimeStamp>();
         private WorkingState _state = WorkingState.Working;

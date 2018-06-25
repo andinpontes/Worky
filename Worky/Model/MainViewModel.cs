@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Diagnostics;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.ComponentModel;
 using Worky.Extensions;
 
 namespace Worky.Model
@@ -19,7 +13,6 @@ namespace Worky.Model
 
         private string _workingTimeToday = string.Empty;
         private string _pausingTimeToday = string.Empty;
-        private string _workingTimeThisWeek = string.Empty;
 
         public string Caption
         {
@@ -43,17 +36,8 @@ namespace Worky.Model
                 OnPropertyChanged(PropertyHelper.CallerName());
             }
         }
-        public string WorkingTimeThisWeek
-        {
-            get { return _workingTimeThisWeek; }
-            set
-            {
-                _workingTimeThisWeek = value;
-
-                OnPropertyChanged(PropertyHelper.CallerName());
-            }
-        }
-        public string WorkingTimeThisMonth { get; set; }// = "working this month";
+        public string WorkingTimeThisWeek { get; set; }
+        public string WorkingTimeThisMonth { get; set; }
 
         public bool IsWorking
         {
