@@ -25,9 +25,16 @@ namespace Worky.IO
 
         public void Write(IEnumerable<TimeStamp> stamps)
         {
-            string[] lines = stamps.Select(e => e.ToString()).ToArray();
+            EnsureDirectoryExists();
 
+            string[] lines = stamps.Select(e => e.ToString()).ToArray();
             File.WriteAllLines(Filename, lines, Encoding.UTF8);
+        }
+
+        private void EnsureDirectoryExists()
+        {
+            string directory = Path.GetDirectoryName(Filename);
+            Directory.CreateDirectory(directory);
         }
     }
 }

@@ -26,8 +26,7 @@ namespace Worky.IO
         {
             List<TimeStamp> result = new List<TimeStamp>();
 
-            string[] lines = File.ReadAllLines(Filename, Encoding.UTF8);
-
+            string[] lines = ReadLinesFromFile();
             foreach (var current in lines)
             {
                 TimeStamp timeStamp;
@@ -36,6 +35,22 @@ namespace Worky.IO
             }
 
             return result;
+        }
+
+        private string[] ReadLinesFromFile()
+        {
+            try
+            {
+                return File.ReadAllLines(Filename, Encoding.UTF8);
+            }
+            catch (FileNotFoundException)
+            {
+            }
+            catch (DirectoryNotFoundException)
+            {
+            }
+
+            return new string[] { };
         }
     }
 }
