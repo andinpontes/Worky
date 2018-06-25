@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
+using Worky.IO;
+using Worky.Model;
 
 namespace Worky
 {
@@ -11,7 +13,13 @@ namespace Worky
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            MainForm mainForm = new MainForm();
+            string filename = "c:\\temp\\foo.txt";
+
+            TimeStampsFileReader fileReader = TimeStampsFileReader.FromFile(filename);
+            //TimeStampsFileWriter fileWriter = TimeStampsFileWriter.FromFile(filename);
+            var viewModel = new MainViewModel(fileReader/*, fileWriter*/);
+
+            MainForm mainForm = new MainForm(viewModel);
             Application.Run(mainForm);
         }
     }

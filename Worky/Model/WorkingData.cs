@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using Worky.Extensions;
+using Worky.Interfaces;
 
 namespace Worky.Model
 {
@@ -69,10 +70,13 @@ namespace Worky.Model
             get { return CalculateTimeSpan(TimeStampsOfThisMonth, WorkingState.Working); }
         }
 
-        public WorkingData()
+        public WorkingData(ITimeStampsReader reader)
         {
             //TODO:
             // read data from file
+
+            //IEnumerable<TimeStamp> stamps = timeStampReader.Read();
+            //_timeStamps.AddRange(stamps);
         }
 
         public void StartPausing()

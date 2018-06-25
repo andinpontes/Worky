@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel;
 using Worky.Extensions;
+using Worky.Interfaces;
 
 namespace Worky.Model
 {
@@ -9,8 +10,7 @@ namespace Worky.Model
 
         public event PropertyChangedEventHandler PropertyChanged;
 
-        private WorkingData _workingData = new WorkingData();
-
+        private WorkingData _workingData;
         private string _workingTimeToday = string.Empty;
         private string _pausingTimeToday = string.Empty;
 
@@ -58,11 +58,15 @@ namespace Worky.Model
             }
         }
 
-        public MainViewModel()
+        public MainViewModel(ITimeStampsReader reader)
+        {
+            _workingData = new WorkingData(reader);
+        }
+
+        public void Start()
         {
             _workingData.StartWorking();
         }
-
         public void Close()
         {
             _workingData.EndWorking();

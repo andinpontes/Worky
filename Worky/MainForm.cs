@@ -8,11 +8,11 @@ namespace Worky
     {
         public MainViewModel ViewModel { get; set; }
 
-        public MainForm()
+        public MainForm(MainViewModel viewModel)
         {
             InitializeComponent();
 
-            ViewModel = new MainViewModel();
+            ViewModel = viewModel;
 
             DataBindings.Add("Text", ViewModel, "Caption");
             textBoxWorkTimeToday.DataBindings.Add("Text", ViewModel, "WorkingTimeToday");
@@ -25,6 +25,7 @@ namespace Worky
 
         private void MainForm_Load(object sender, EventArgs e)
         {
+            ViewModel.Start();
             timer.Start();
         }
 
