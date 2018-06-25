@@ -3,7 +3,7 @@ using Worky.Model;
 
 namespace Worky.Interfaces
 {
-    interface ITimeStampsWriter
+    public interface ITimeStampsWriter
     {
         void Write(IEnumerable<TimeStamp> stamps);
     }

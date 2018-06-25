@@ -8,6 +8,8 @@ namespace Worky.Model
 {
     class WorkingData
     {
+        private ITimeStampsReader _timeStampsReader;
+        private ITimeStampsWriter _timeStampsWriter;
         private List<TimeStamp> _timeStamps = new List<TimeStamp>();
         private WorkingState _state = WorkingState.Working;
 
@@ -70,37 +72,34 @@ namespace Worky.Model
             get { return CalculateTimeSpan(TimeStampsOfThisMonth, WorkingState.Working); }
         }
 
-        public WorkingData(ITimeStampsReader reader)
+        public WorkingData(ITimeStampsReader reader, ITimeStampsWriter writer)
         {
-            //TODO:
-            // read data from file
+            _timeStampsReader = reader ?? throw new ArgumentNullException(nameof(reader));
+            _timeStampsWriter = writer ?? throw new ArgumentNullException(nameof(writer));
 
-            //IEnumerable<TimeStamp> stamps = timeStampReader.Read();
-            //_timeStamps.AddRange(stamps);
+            IEnumerable<TimeStamp> stamps = _timeStampsReader.Read();
+            _timeStamps.AddRange(stamps);
         }
 
         public void StartPausing()
         {
             _state = WorkingState.Pausing;
             _timeStamps.Add(new TimeStamp(WorkingState.Pausing));
-            //TODO:
-            // write data into file
+            _timeStampsWriter.Write(_timeStamps);
         }
 
         public void StartWorking()
         {
             _state = WorkingState.Working;
             _timeStamps.Add(new TimeStamp(WorkingState.Working));
-            //TODO:
-            // write data into file
+            _timeStampsWriter.Write(_timeStamps);
         }
 
         public void EndWorking()
         {
             _state = WorkingState.Ending;
             _timeStamps.Add(new TimeStamp(WorkingState.Ending));
-            //TODO:
-            // write data into file
+            _timeStampsWriter.Write(_timeStamps);
         }
 
         private TimeSpan CalculateTimeSpan(TimeStamp[] timeStamps, WorkingState workingState)

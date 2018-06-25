@@ -16,8 +16,8 @@ namespace Worky
             string filename = "c:\\temp\\foo.txt";
 
             TimeStampsFileReader fileReader = TimeStampsFileReader.FromFile(filename);
-            //TimeStampsFileWriter fileWriter = TimeStampsFileWriter.FromFile(filename);
-            var viewModel = new MainViewModel(fileReader/*, fileWriter*/);
+            TimeStampsFileWriter fileWriter = TimeStampsFileWriter.FromFile(filename);
+            var viewModel = new MainViewModel(fileReader, fileWriter);
 
             MainForm mainForm = new MainForm(viewModel);
             Application.Run(mainForm);

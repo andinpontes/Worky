@@ -49,6 +49,7 @@
     <Compile Include="Extensions\PropertyHelper.cs" />
     <Compile Include="Interfaces\ITimeStampsReader.cs" />
     <Compile Include="Interfaces\ITimeStampsWriter.cs" />
+    <Compile Include="IO\TimeStampsFileWriter.cs" />
     <Compile Include="IO\TimeStampsFileReader.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>

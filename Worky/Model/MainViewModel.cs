@@ -58,9 +58,9 @@ namespace Worky.Model
             }
         }
 
-        public MainViewModel(ITimeStampsReader reader)
+        public MainViewModel(ITimeStampsReader reader, ITimeStampsWriter writer)
         {
-            _workingData = new WorkingData(reader);
+            _workingData = new WorkingData(reader, writer);
         }
 
         public void Start()

@@ -1,8 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Collections.Generic;
+using System.IO;
 using System.Text;
-using System.Threading.Tasks;
 using Worky.Interfaces;
 using Worky.Model;
 
@@ -27,8 +25,15 @@ namespace Worky.IO
         public IEnumerable<TimeStamp> Read()
         {
             List<TimeStamp> result = new List<TimeStamp>();
-            
-            //TODO:
+
+            string[] lines = File.ReadAllLines(Filename, Encoding.UTF8);
+
+            foreach (var current in lines)
+            {
+                TimeStamp timeStamp;
+                if (TimeStamp.TryParse(current, out timeStamp))
+                    result.Add(timeStamp);
+            }
 
             return result;
         }
